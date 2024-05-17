@@ -1,4 +1,4 @@
-## Typescript exercises :rocket :clapper: 
+## Typescript exercises :book: :blush: :pencil: 
 
 
 This repository is about some exercises made by me to study Typescript. It contains examples and comments to understand the code. Maybe it can help someone.
