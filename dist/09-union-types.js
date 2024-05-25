@@ -1,6 +1,6 @@
 "use strict";
 (() => {
-    let userId; //tipado explícito (no inferido) con Union type para personalizarlo a dos tipos de datos que queramos: string y number.
+    let userId; //tipado explícito con Union type para personalizarlo a dos tipos de datos que queramos: string y number.
     userId = 1212;
     userId = 'Noelia';
     function greeting(myText) {

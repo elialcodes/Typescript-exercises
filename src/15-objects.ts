@@ -1,12 +1,24 @@
 (() => {
+  //así se tiparía explícitamente un objeto sin alias
+  const user: { name: string; lastName: string; pin: number } = {
+    name: 'Elena',
+    lastName: 'Iglesias',
+    pin: 1234,
+  };
+  console.log(user);
+
   //creamos la función addProduct:
-  type Sizes = 'XS' | 'S' | 'M' | 'L' | 'XL' | '2XL'; //alias y literal types
 
-  type Product = { title: string; created: Date; stock: number; size?: Sizes }; // con alias personalizamos un tipado de objeto y dentro tipamos sus propiedades
+  //tenemos este alias y literal types
+  type Sizes = 'XS' | 'S' | 'M' | 'L' | 'XL' | '2XL';
 
-  const products: Product[] = []; //aquí la constante será un array de objetos que tienen que cumplir con el tipado de Product
+  //con alias creamos un tipado de objeto
+  type Product = { title: string; created: Date; stock: number; size?: Sizes };
 
-  //creamos una función con el argumento data y data lo tipamos con el alias type Product de la línea 5
+  //aquí la constante será un array vacío, cuyo tipado es un array de objetos que tienen que cumplir con el tipado de Product
+  const products: Product[] = [];
+
+  //creamos una función con el argumento data y data lo tipamos con el alias type Product de la línea 16
   //con esta función se añadirán productos nuevos al array products
   const addProduct = (data: Product) => {
     products.push(data);

@@ -1,13 +1,9 @@
 (() => {
-  type Sizes = 'XS' | 'S' | 'M' | 'L' | 'XL' | '2XL'; //alias y literal types juntos
+  //juntamos alias (porque estamos definiendo un tipo) y literal types (porque estamos pasando valores literiales)
+  type Sizes = 'XS' | 'S' | 'M' | 'L' | 'XL' | '2XL';
 
   //creamos una función para crear un producto con formato JSON (lo que devuelva tendrá formato de objeto), le pasamos 4 parámetros y los tipamos sobre la marcha
-  function createProductJson(
-    title: string,
-    created: Date,
-    stock: number,
-    size: Sizes
-  ) {
+  function createProductJson(title: string, created: Date, stock: number, size: Sizes) {
     return {
       title,
       created,
@@ -28,12 +24,7 @@
   //vamos a hacer que el parámetro sizes sea opcional con el signo ? (en una función normal también se puede poner como opcional un parámetro)
   //los parámetros opcionales se pondrán al final para que typescript no devuelva error
 
-  const createProductJsonV2 = (
-    title: string,
-    created: Date,
-    stock: number,
-    size?: Sizes
-  ) => {
+  const createProductJsonV2 = (title: string, created: Date, stock: number, size?: Sizes) => {
     return {
       title,
       created,

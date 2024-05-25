@@ -1,5 +1,5 @@
 (() => {
-  let userId: string | number; //tipado explícito (no inferido) con Union type para personalizarlo a dos tipos de datos que queramos: string y number.
+  let userId: string | number; //tipado explícito con Union type para personalizarlo a dos tipos de datos que queramos: string y number.
   userId = 1212;
   userId = 'Noelia';
 

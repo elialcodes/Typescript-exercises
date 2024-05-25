@@ -1,7 +1,15 @@
 "use strict";
 (() => {
-    const products = []; //aquí la constante será un array de objetos que tienen que cumplir con el tipado de Product
-    //creamos una función con el argumento data y data lo tipamos con el alias type Product de la línea 5
+    //así se tiparía explícitamente un objeto sin alias
+    const user = {
+        name: 'Elena',
+        lastName: 'Iglesias',
+        pin: 1234,
+    };
+    console.log(user);
+    //aquí la constante será un array vacío, cuyo tipado es un array de objetos que tienen que cumplir con el tipado de Product
+    const products = [];
+    //creamos una función con el argumento data y data lo tipamos con el alias type Product de la línea 16
     //con esta función se añadirán productos nuevos al array products
     const addProduct = (data) => {
         products.push(data);

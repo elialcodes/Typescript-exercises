@@ -4,11 +4,11 @@
   console.log('productPrice', productPrice);
 
   let customerAge: number = 28; //tipado number explícito o manual
-  customerAge = customerAge + '1'; // typescript nos avisa de la suma de number y string, nos devuelve 281, pues js concatena 28 y "1"
-  customerAge = customerAge + 1; // nos devuelve 29, pues suma 2 numbers
+  customerAge = customerAge + '1'; // typescript da error, nos avisa que la suma de number y string nos devuelve 281, pues js concatena 28 y "1"
+  customerAge = customerAge + 1; // typescript no da error, nos devuelve 29, pues suma 2 numbers
   console.log('customerAge', customerAge);
 
-  let productInStock: number; //tipado number explícito o manual
+  let productInStock: number; //tipado number explícito o manual pero sin asigar a nada
   console.log('productInStock', productInStock); //error porque la variable no tiene asignado ningún valor, sólo el tipado y no sabe qué poner
   if (productInStock > 10) {
     console.log('is greater');
@@ -29,7 +29,7 @@
   console.log('bin', bin);
   //let bin1=0b1012; // error si en el número binario ponemos algo fuera del rango 1 0
 
-  const myNumber: number = 10; //el tipado number se pondrá en minúsculas, para diferenciarlo del objeto Number:
+  const myNumber: number = 10; //tipado explícito, el tipado number se pondrá en minúsculas, para diferenciarlo del objeto Number:
   //const myNumber: Number = 10; //mala práctica ponerlo en mayúsculas
 })();
 

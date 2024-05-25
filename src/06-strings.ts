@@ -1,5 +1,5 @@
 (() => {
-  let productTitle = 'My amazing product'; // Typescript infiere tipado de tipo string
+  let productTitle = 'My amazing product'; // Typescript infiere tipado de string
   // productTitle = null;// si reasignamos la variable a null nos daría error
   // productTitle = () => {}; // si reasignamos la variable a función nos daría error
   // productTitle = 123; // si reasignamos la variable a number nos daría error
@@ -12,7 +12,7 @@
   let productPrice = 100;
   let isNew: boolean = false;
 
-  //podemos usar template literals usando `` para indentar (poner sangrías al texto) y concatenar con otras variables con ${}
+  //podemos usar template literals usando `` para indentar (poner sangrías al texto) y ${} para concatenar con otras variables
   const summary = `
     title: ${productTitle}
     description: ${productDescription}
@@ -22,9 +22,9 @@
 
   console.log(summary); //nos devuelve todo como string
 
-  const myString: string = ''; //si tipamos de forma explícita lo escribiremos con minúsculas
+  const myString: string = 'esto es un string'; //si tipamos de forma explícita lo escribiremos con minúsculas
   console.log(myString);
-  //const myString: String = ''; mala práctica
+  //const myString: String = 'esto es un string'; mala práctica
 })();
 
 //corremos el código en la terminal con node dist/06-strings.js

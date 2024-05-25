@@ -1,18 +1,20 @@
 (() => {
-  let null01 = null; //en este caso, a difierencia de otros tipos, Typescript no infiere un tipado null, infiere un tipado any
-  let undefined01 = undefined; //en este caso, a difierencia de otros tipos, Typescript no infiere un tipado undefined, infiere un tipado any
+  //en el caso variables null y undefined, Typescript infiere el tipado any
+  let null01 = null; //infiere un tipado any
+  let undefined01 = undefined; //infiere un tipado any
 
-  let myNull: null = null; //para que deje de ser any, tenemos que tiparlo explícitamente como null
-  let myUndefined: undefined = undefined; //para que deje de ser any, tenemos que tiparlo explícitamente como undefined
+  //para que deje de ser any, tenemos que tiparlo explícitamente como null o undefined
+  let myNull: null = null;
+  let myUndefined: undefined = undefined;
 
-  //utilizamos union types para que la variable sea inicializada como null y más tarde sea de un tipo determinado
+  //utilizamos union types para combinar tipos y que la variable sea inicializada como null y más tarde sea de un tipo determinado
   //(nos puede pasar en frameworks con componentes dinámicos como React o Angular, durante un breve instante la variable será null
   //y al levantarse se convertirá a otro tipado):
   let myNumber: null | number = null;
   myNumber = 12;
   myNumber = null;
 
-  //utilizamos union types para que la variable sea inicializada como un undefined y más tarde ser de un tipo determinado:
+  //utilizamos union types para combinar tipos y que la variable sea inicializada como un undefined y más tarde ser de un tipo determinado:
   let myString: undefined | string = undefined;
   myString = 'Noelia';
   myString = undefined;
@@ -21,7 +23,8 @@
   function hi(name: null | string) {
     let hello = 'Hola ';
     if (name) {
-      hello += name;
+      //aquí name puede ser null o string
+      hello += name; //aquí name ya sólo es string por que el condicional le dice: "si name existe,..." (entonces ya no es null)
     } else {
       hello += 'nobody';
     }
